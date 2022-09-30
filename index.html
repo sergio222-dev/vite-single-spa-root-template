@@ -27,10 +27,10 @@
     {
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.4/lib/system/single-spa.min.js",
-        //"vue": "https://cdn.jsdelivr.net/npm/vue@3.2.33/dist/vue.global.prod.js",
-        //"vue-router": "https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js",
-        //"pinia": "https://cdn.jsdelivr.net/npm/pinia@2.0.13/dist/pinia.iife.prod.js",
-        //"single-spa-vue": "https://cdn.jsdelivr.net/npm/single-spa-vue@2.5.1/dist/umd/single-spa-vue.min.js"
+        "vue": "https://cdn.jsdelivr.net/npm/vue@3.2.33/dist/vue.global.prod.js",
+        "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js",
+        "pinia": "https://cdn.jsdelivr.net/npm/pinia@2.0.13/dist/pinia.iife.prod.js",
+        "single-spa-vue": "https://cdn.jsdelivr.net/npm/single-spa-vue@2.5.1/dist/umd/single-spa-vue.min.js"
       }
     }
 
@@ -56,8 +56,8 @@
    Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
  -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.4.2/dist/import-map-overrides.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
     {{#if isLocal}}
     <script src="https://cdn.jsdelivr.net/npm/systemjs@6.12.1/dist/system.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/systemjs@6.12.1/dist/extras/amd.js"></script>
@@ -80,8 +80,9 @@
 <script>
   System.import('root-config');
 </script>
-<h1>Micros XD</h1>
-<import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
-<h2>Otros micros XD</h2>
+<import-map-overrides-full
+        show-when-local-storage="overrides-ui"
+        dev-libs
+></import-map-overrides-full>
 </body>
 </html>
